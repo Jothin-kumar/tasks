@@ -30,6 +30,11 @@ document.addEventListener('keyup', (event) => {
         }
     }
 })
+document.addEventListener('visibilitychange', (event) => {
+    if (document.visibilityState !== 'visible') {
+        gotoInput.blur()
+    }
+})
 goto.addEventListener('focusin', () => {
     gotoOpts.style.display = 'block'
 })
