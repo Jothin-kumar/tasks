@@ -1,5 +1,6 @@
 const goto = document.getElementById('goto')
 const gotoInput = document.getElementById('goto-input')
+gotoInput.value = ''
 const gotoOpts = document.getElementById('goto-opts')
 
 document.addEventListener('keyup', (event) => {
@@ -71,22 +72,3 @@ function addGoToOption(title, desc, f) {
 function clearGotoOptionActive() {
     new Array(...gotoOpts.children).forEach((el) => el.classList.remove('active'))
 }
-addGoToOption(
-    'Create new task',
-    'Enter your title and hit enter to create a new task. Use up/down arrow to choose other options.',
-    () => console.log('Create new task')
-).classList.add('active')
-addGoToOption(
-    'Search tasks',
-    'Type your search query and hit enter to search tasks.',
-    () => alert('Search tasks')
-)
-addGoToOption(
-    'Info & settings',
-    'Customize this app / View usage guide',
-    () => alert('Info & settings')
-)
-
-gotoInput.addEventListener('input', (event) => {
-    const txt = gotoInput.value
-})
