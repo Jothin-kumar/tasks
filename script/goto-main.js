@@ -9,6 +9,7 @@ document.addEventListener('keyup', (event) => {
     }
     else if (event.key === 'Escape') {
         gotoInput.blur()
+        gotoOpts.style.display = 'none'
     }
     if (document.activeElement === gotoInput) {
         currentIndex = Array.from(gotoOpts.children).indexOf(document.querySelector('.goto-opt.active'))
