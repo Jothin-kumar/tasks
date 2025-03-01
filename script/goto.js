@@ -54,7 +54,12 @@ function addGoToOption(title, desc, f) {
     const option = document.createElement('div')
     option.classList.add('goto-opt')
     option.innerHTML = `<div class="goto-title">${title}</div><div class="goto-desc">${desc}</div>`
-    option.onclick = f
+    option.onclick = () => {
+        f()
+        gotoInput.value = ''
+        gotoInput.blur()
+        gotoOpts.style.display = 'none'
+    }
     gotoOpts.appendChild(option)
     option.addEventListener('mouseover', () => {
         clearGotoOptionActive()
