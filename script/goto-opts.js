@@ -15,7 +15,7 @@ const infoAndSettingsOpt = addGoToOption(
     () => alert('Info & settings')
 )
 
-gotoInput.addEventListener('input', (event) => {
+function updateOpts() {
     const txt = gotoInput.value.trim()
     if (txt) {
         newTaskOpt.innerHTML = `<div class="goto-title">Create new task</div><div class="goto-desc">Create a task with title "${txt}"</div>`
@@ -25,4 +25,5 @@ gotoInput.addEventListener('input', (event) => {
         newTaskOpt.innerHTML = `<div class="goto-title">Create new task</div><div class="goto-desc">Enter your title and hit enter to create a new task. Use up/down arrow to choose other options.</div>`
         searchTaskOpt.innerHTML = `<div class="goto-title">Search tasks</div><div class="goto-desc">Type your search query and hit enter to search tasks.</div>`
     }
-})
+}
+gotoInput.addEventListener('input', updateOpts)

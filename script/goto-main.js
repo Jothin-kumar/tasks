@@ -17,6 +17,7 @@ document.addEventListener('keyup', (event) => {
         if (event.key === 'Enter') {
             gotoOpts.children[currentIndex].onclick()
             gotoInput.blur()
+            updateOpts()
         }
         else if (event.key === 'ArrowDown') {
             if (currentIndex < gotoOpts.children.length - 1) {
