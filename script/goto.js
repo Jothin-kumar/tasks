@@ -56,6 +56,7 @@ function addGoToOption(title, desc, f) {
         option.classList.add('active')
         window.currentIndex = Array.from(gotoOpts.children).indexOf(option)
     })
+    return option
 }
 function clearGotoOptionActive() {
     new Array(...gotoOpts.children).forEach((el) => el.classList.remove('active'))
@@ -64,7 +65,7 @@ addGoToOption(
     'Create new task',
     'Enter your title and hit enter to create a new task. Use up/down arrow to choose other options.',
     () => console.log('Create new task')
-)
+).classList.add('active')
 addGoToOption(
     'Search tasks',
     'Type your search query and hit enter to search tasks.',
