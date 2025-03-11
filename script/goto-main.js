@@ -3,8 +3,9 @@ const gotoInput = document.getElementById('goto-input')
 gotoInput.value = ''
 const gotoOpts = document.getElementById('goto-opts')
 
-document.addEventListener('keyup', (event) => {
-    if (event.key === '.') {
+document.addEventListener('keydown', (event) => {
+    if (['.', '/'].includes(event.key)) {
+        event.preventDefault()
         gotoInput.focus()
     }
     else if (event.key === 'Escape') {
